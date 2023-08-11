@@ -52,10 +52,18 @@
 	
 
 
-<div id = "drinks">
-	<h2>Drinks</h2>
-</div>
 
+
+<div id = "fries">
+	<h2>Fries</h2>
+	<div ng-repeat = "x in fries">
+		<h4 id="{{x.id}}">{{x.name}}</h4>
+		<img src = {{x.pic}}>
+		<span>Price: {{x.price|currency}}</span>
+		<hr>
+	</div>
+
+</div>
 
 <div id = "burgers">
 	<h2>Burgers</h2>
@@ -69,16 +77,7 @@
 </div>
 
 
-<div id = "fries">
-	<h2>Fries</h2>
-	<div ng-repeat = "x in fries">
-		<h4 id="{{x.id}}">{{x.name}}</h4>
-		<img src = {{x.pic}}>
-		<span>Price: {{x.price|currency}}</span>
-		<hr>
-	</div>
 
-</div>
 
 
 <div id = "salads">
@@ -104,6 +103,17 @@
 	</div>
 </div>
 
+<div id = "drinks">
+	<h2>Drinks</h2>
+	<div ng-repeat = "x in drinks">
+		<h4 id ="{{x.id}}">{{x.name}}</h4>
+		<img src = {{x.pic}}>
+		<p>Price: {{x.price|currency}}</p>
+		<p>{{x.desc}}</p>
+		<hr>
+	</div>
+</div>
+
 </div>
 
 </div>
@@ -111,10 +121,21 @@
 		var app = angular.module('myApp', []);
 
 		app.controller('myCtrl', function($scope){
+
+			$scope.drinks = [
+			{id: "drLemon", name: "Hand-Squeezed Lemonade", price: 2.50, pic: "filler.png"},
+			{id: "drCoke", name: "Coca-Cola", price: 2.00, pic: "filler.png"},
+			{id: "drBud", name: "Budweiser Beer", price: 3.00, pic: "filler.png"},
+			{id: "drBudL", name: "Budweiser Light Beer", price: 3.00, pic: "filler.png"},
+			{id: "drChoc", name: "Chocolate Milk Shake", price: 3.50, pic: "filler.png"},
+			{id: "drVan", name: "Vanilla Milk Shake", price: 3.50, pic: "filler.png"},
+			{id: "drStraw", name: "Strawberry Milk Shake", price: 3.50, pic: "filler.png"}
+			]
+
 			$scope.fries = [
-			{id: "fcurly", name: "Curly Fries", price: 3.00, pic: "filler.png"},
-			{id: "fsteak", name: "Steak Fries", price: 2.50, pic: "filler.png"},
-			{id: "fcrinkle", name: "Crinkle Fries", price: 2.50, pic: "filler.png"}
+			{id: "fCurly", name: "Curly Fries", price: 3.00, pic: "filler.png"},
+			{id: "fSteak", name: "Steak Fries", price: 2.50, pic: "filler.png"},
+			{id: "fCrinkle", name: "Crinkle Fries", price: 2.50, pic: "filler.png"}
 			]
 
 			$scope.burgers =[
@@ -129,6 +150,11 @@
 			{id: "salRanch", name: "Ranch Salad", price: 5.50, pic: "filler.png", desc: "Iceberg lettuce, shredded cheddar cheese, crispy strips, cucumbers, corn, and Southwest Ranch Dressing"}
 			]
 
+			$scope.desserts =[
+			{id: "deSundae", name: "Ice Cream Sundae", price: 4.50, pic: "filler.png", desc: "Vanilla icecream, hot fudge, butter scotch, crushed peanuts, candied cherry"},
+			{id: "deApplePie", name: "Apple Pie", price: 3.50, pic: "filler.png", desc: "A side of Dennis' home made Apple Pie"},
+			{id: "deCheeseCake", name: "Cheese Cake", price: 6.50, pic: "filler.png", desc: "A slice of New York style Cheese Cake"}
+			]
 
 		})
 	</script>
