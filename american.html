@@ -1,0 +1,133 @@
+<head>
+<!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<link rel = "stylesheet" href="style.css" >
+</head>
+<body>
+<div ng-app="myApp" ng-controller ="myCtrl">	
+<div id = "title"> <h1>Dennis' All-American Diner</h1></div>
+<hr />
+<div class = "btn-group">
+
+
+
+<a href ="#fries" role = "button" class = "btn btn-primary">Fries</a>
+
+<div class = "btn-group">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+    Burgers
+  </button>
+  
+</div>
+
+<div class = "btn-group">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+    Salad
+  </button>
+ <ul class="dropdown-menu">
+    <li ng-repeat = "x in salads"><a class="dropdown-item" href="#{{x.id}}">{{x.name}}</a></li>
+  </ul>
+</div>
+
+<div class = "btn-group">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+    Desserts
+  </button>
+   <ul class="dropdown-menu">
+    <li ng-repeat = "x in desserts"><a class="dropdown-item" href="#{{x.id}}">{{x.name}}</a></li>
+  </ul>
+</div>
+
+<a href = "#drinks" role = "button" class = "btn btn-primary">Drinks</a>
+
+</div>
+	
+
+
+<div id = "drinks">
+	<h2>Drinks</h2>
+</div>
+
+
+<div id = "burgers">
+	<h2>Burgers</h2>
+	<div ng-repeat = "x in burgers">
+		<h4 id ="{{x.id}}">{{x.name}}</h4>
+		<img src = {{x.pic}}>
+		<p>Price: {{x.price|currency}}</p>
+		<p>{{x.desc}}</p>
+		<hr>
+	</div>
+</div>
+
+
+<div id = "fries">
+	<h2>Fries</h2>
+	<div ng-repeat = "x in fries">
+		<h4 id="{{x.id}}">{{x.name}}</h4>
+		<img src = {{x.pic}}>
+		<span>Price: {{x.price|currency}}</span>
+		<hr>
+	</div>
+
+</div>
+
+
+<div id = "salads">
+	<h2>Salads</h2>
+	<div ng-repeat = "x in salads">
+		<h4 id ="{{x.id}}">{{x.name}}</h4>
+		<img src = {{x.pic}}>
+		<p>Price: {{x.price|currency}}</p>
+		<p>{{x.desc}}</p>
+		<hr>
+	</div>
+</div>
+
+
+<div id = "desserts">
+	<h2>Desserts</h2>
+	<div ng-repeat = "x in desserts">
+		<h4 id ="{{x.id}}">{{x.name}}</h4>
+		<img src = {{x.pic}}>
+		<p>Price: {{x.price|currency}}</p>
+		<p>{{x.desc}}</p>
+		<hr>
+	</div>
+</div>
+
+</div>
+
+</div>
+	<script>
+		var app = angular.module('myApp', []);
+
+		app.controller('myCtrl', function($scope){
+			$scope.fries = [
+			{id: "fcurly", name: "Curly Fries", price: 3.00, pic: "filler.png"},
+			{id: "fsteak", name: "Steak Fries", price: 2.50, pic: "filler.png"},
+			{id: "fcrinkle", name: "Crinkle Fries", price: 2.50, pic: "filler.png"}
+			]
+
+			$scope.burgers =[
+			{id: "hamCheese", name: "Classic Cheeseburger", price: 5.50, pic: "filler.png", desc: "Cheese, lettuce, tomato, ketchup, and mustard on a sesame seed bun."},
+			{id: "hamCowboy", name: "Cowboy", price: 6.50, pic: "filler.png", desc: "Cheddar, cheese, bacon, fried onions, and BBQ sauce!"}
+			]
+			
+			$scope.salad =[
+			{id: "salGard", name: "Garden Salad", price: 4.50, pic: "filler.png", desc: "Romaine lettuce, tomatoes, onions, shredded carrots, olive oil and vinegar dressing"},
+			{id: "salCeas", name: "Ceasar Salad", price: 5.00, pic: "filler.png", desc: "Iceberg lettuce, cucumbers, shredded parmesan, ceasar dressing"},
+				{id: "salChiCeas", name: "Chicken Ceasar Salad", price: 6.50, pic: "filler.png", desc: "Iceberg lettuce, cucumbers, shredded parmesan, ceasar dressing, grilled white meat chicken"}
+			{id: "salRanch", name: "Ranch Salad", price: 5.50, pic: "filler.png", desc: "Iceberg lettuce, shredded cheddar cheese, crispy strips, cucumbers, corn, and Southwest Ranch Dressing"}
+			]
+
+
+		})
+	</script>
+</body>
