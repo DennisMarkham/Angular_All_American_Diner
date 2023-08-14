@@ -35,3 +35,28 @@ li a
 	font-weight: bold !important;
 }
 
+#smallScreenNav
+{
+	display: none;
+}
+
+#smallScreenNav .dropend, #smallScreenNav .btn
+{
+	width: 200px !important;
+}
+
+
+
+@media only screen and (max-width: 500px){
+
+#largeScreenNav
+{
+display: none;
+}
+
+#smallScreenNav
+{
+display: block;
+}
+
+}

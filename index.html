@@ -8,14 +8,55 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
 <link rel = "stylesheet" href="style.css" >
+
+<meta name = "viewport" content="width=device-width, intial-scale=1.0" />
+
+
 </head>
+
 <body>
 <div ng-app="myApp" ng-controller ="myCtrl">	
 <div id = "title"> <h1>Dennis' All-American Diner</h1></div>
 <hr />
-<div class = "btn-group">
+
+<!-- small screen -->
+<div class = "btn-group-vertical" id = "smallScreenNav">
+	<a href ="#fries" role = "button" class = "btn btn-primary">Fries</a>
+
+	<div class="dropdown dropend btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+      Burgers
+    </button>
+    <ul class="dropdown-menu">
+      <li ng-repeat = "x in burgers"><a class="dropdown-item" href="#{{x.id}}">{{x.name}}</a></li>
+    </ul>
+  </div>
+
+  <div class="dropdown dropend btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+      Salads
+    </button>
+    <ul class="dropdown-menu">
+      <li ng-repeat = "x in salads"><a class="dropdown-item" href="#{{x.id}}">{{x.name}}</a></li>
+    </ul>
+  </div>
+
+  <div class="dropdown dropend btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+      Desserts
+    </button>
+    <ul class="dropdown-menu">
+     <li ng-repeat = "x in desserts"><a class="dropdown-item" href="#{{x.id}}">{{x.name}}</a></li>
+    </ul>
+  </div>
+
+<a href ="#drinks" role = "button" class = "btn btn-primary">Drinks</a>
+
+</div>
 
 
+<!-- large screen -->
+<div class = "btn-group" id = "largeScreenNav">
 
 <a href ="#fries" role = "button" class = "btn btn-primary">Fries</a>
 
@@ -139,7 +180,7 @@
 
 			$scope.burgers =[
 			{id: "hamCheese", name: "Classic Cheeseburger", price: 5.50, pic: "filler.png", desc: "Cheese, lettuce, tomato, ketchup, and mustard on a sesame seed bun."},
-			{id: "hamCowboy", name: "Cowboy", price: 6.50, pic: "filler.png", desc: "Cheddar, cheese, bacon, fried onions, and BBQ sauce!"}
+			{id: "hamCowboy", name: "The Cowboy", price: 6.50, pic: "filler.png", desc: "Cheddar, cheese, bacon, fried onions, and BBQ sauce!"}
 			]
 			
 			$scope.salads =[
