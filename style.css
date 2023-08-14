@@ -5,7 +5,18 @@ img{
 	border-color: black;
 	border-radius: 10px;
 	margin-right: 10px;
+	margin-bottom: 10px;
 }
+
+.catInner{
+	padding-bottom: 10px;
+}
+
+.catOuter{
+	margin-top: 50px;
+}
+
+
 
 h2
 {

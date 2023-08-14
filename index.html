@@ -54,20 +54,19 @@
 
 
 
-<div id = "fries">
+<div id = "fries" class = "catOuter">
 	<h2>Fries</h2>
-	<div ng-repeat = "x in fries">
+	<div ng-repeat = "x in fries" class = "catInner">
 		<h4 id="{{x.id}}">{{x.name}}</h4>
 		<img src = {{x.pic}}>
 		<span>Price: {{x.price|currency}}</span>
 		<hr>
 	</div>
-
 </div>
 
-<div id = "burgers">
+<div id = "burgers" class = "catOuter">
 	<h2>Burgers</h2>
-	<div ng-repeat = "x in burgers">
+	<div ng-repeat = "x in burgers" class = "catInner">
 		<h4 id ="{{x.id}}">{{x.name}}</h4>
 		<img src = {{x.pic}}>
 		<p>Price: {{x.price|currency}}</p>
@@ -80,9 +79,9 @@
 
 
 
-<div id = "salads">
+<div id = "salads" class = "catOuter">
 	<h2>Salads</h2>
-	<div ng-repeat = "x in salads">
+	<div ng-repeat = "x in salads" class = "catInner">
 		<h4 id ="{{x.id}}">{{x.name}}</h4>
 		<img src = {{x.pic}}>
 		<p>Price: {{x.price|currency}}</p>
@@ -92,9 +91,9 @@
 </div>
 
 
-<div id = "desserts">
+<div id = "desserts" class ="catOuter">
 	<h2>Desserts</h2>
-	<div ng-repeat = "x in desserts">
+	<div ng-repeat = "x in desserts" class = "catInner">
 		<h4 id ="{{x.id}}">{{x.name}}</h4>
 		<img src = {{x.pic}}>
 		<p>Price: {{x.price|currency}}</p>
@@ -103,9 +102,9 @@
 	</div>
 </div>
 
-<div id = "drinks">
+<div id = "drinks" class = "catOuter">
 	<h2>Drinks</h2>
-	<div ng-repeat = "x in drinks">
+	<div ng-repeat = "x in drinks" class = "catInner">
 		<h4 id ="{{x.id}}">{{x.name}}</h4>
 		<img src = {{x.pic}}>
 		<p>Price: {{x.price|currency}}</p>
@@ -127,9 +126,9 @@
 			{id: "drCoke", name: "Coca-Cola", price: 2.00, pic: "filler.png"},
 			{id: "drBud", name: "Budweiser Beer", price: 3.00, pic: "filler.png"},
 			{id: "drBudL", name: "Budweiser Light Beer", price: 3.00, pic: "filler.png"},
-			{id: "drChoc", name: "Chocolate Milk Shake", price: 3.50, pic: "filler.png"},
-			{id: "drVan", name: "Vanilla Milk Shake", price: 3.50, pic: "filler.png"},
-			{id: "drStraw", name: "Strawberry Milk Shake", price: 3.50, pic: "filler.png"}
+			{id: "drChoc", name: "Chocolate Milk Shake", price: 3.50, pic: "drinks/chocolate.png"},
+			{id: "drVan", name: "Vanilla Milk Shake", price: 3.50, pic: "drinks/vanilla.png"},
+			{id: "drStraw", name: "Strawberry Milk Shake", price: 3.50, pic: "drinks/strawberry.png"}
 			]
 
 			$scope.fries = [
